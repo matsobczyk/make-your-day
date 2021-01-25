@@ -40,12 +40,12 @@ class NoteController extends Controller
 
         error_log('TEST WEJSCIA do store.');
 
-        $this->validate($request, [
-            'name' => 'required',
-            'subtitle' => 'required',
-            'content' => 'required',
+          $this->validate($request, [
+            'name' => 'required|unique:notes|max:60',
+            'subtitle' => 'required|max:60',
+            'content' => 'required|max:500',
             'color' => 'required',
-            'tag' => 'required'
+            'tag' => 'required|alpha'
           ]);
       
           $current_date = date('Y-m-d H:i:s');
