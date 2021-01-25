@@ -2,47 +2,72 @@
 
 
 @section('content')
-    <div class="row">
+    <div class="row" style="margin-left:15px;">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>  {{ $project->name }}</h2>
+                <h1> Dane notatki </h1>
+                <h2>  {{ $note->name }}</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            <a class="btn btn-primary" onclick="window.location='{{ url("note") }}'" title="Go back"> <i class="fas fa-backward ">back</i> </a>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-left:15px;">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $project->name }}
+                {{ $note->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Introduction:</strong>
-                {{ $project->introduction }}
+                <strong>Subtitle:</strong>
+                {{ $note->subtitle }}
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+         </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Location:</strong>
-                {{ $project->location }}
+                <strong>Content:</strong>
+                {{ $note->content }}
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Cost:</strong>
-                {{ $project->cost }}
+                <strong>Color:</strong>
+                {{ $note->color }}
             </div>
-        </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tag:</strong>
+                {{ $note->tag }}
+            </div>
+            </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Date Created:</strong>
-                {{ date_format($project->created_at, 'jS M Y') }}
+                {{ $note->created_at, 'jS M Y' }}
             </div>
-        </div>
+            </div>
+        
+            <form
+                 method="POST"
+                 action="{{ route('note.destroy', $note->id) }}"
+                 onsubmit="return confirm('Do you really want to delete?');">
+
+
+                 {!! csrf_field() !!}
+
+                <input
+                type="hidden"
+                name="_method"
+                value="DELETE">
+
+                <button
+                type="submit"
+                class="btn btn-danger">Delete</button>
+            </form>
     </div>
 @endsection

@@ -16,7 +16,7 @@ class NoteController extends Controller
     {
         $notes = Note::all();
     // var_dump($cele);
-    return view('note.index')->with('note', $notes);
+    return view('note.index')->with('notes', $notes);
     }
 
     /**
@@ -37,7 +37,35 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        error_log('TEST WEJSCIA do store.');
+
+        $this->validate($request, [
+            'name' => 'required',
+            'subtitle' => 'required',
+            'content' => 'required',
+            'color' => 'required',
+            'tag' => 'required'
+          ]);
+      
+          $current_date = date('Y-m-d H:i:s');
+
+          // Stworzenie celu
+          $note = new Note;
+          $note->name = $request->input('name');
+          $note->subtitle = $request->input('subtitle');
+          $note->content = $request->input('content');
+          $note->color = $request->input('color');
+          $note->tag = $request->input('tag');
+          //$note->created_at = $current_date;
+          //$note->updated_at = $current_date;
+
+          try{
+          $note->save();
+          }catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+          }
+          return redirect()->route('note')->with('success','dodano notatke');
     }
 
     /**
@@ -46,9 +74,9 @@ class NoteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Note $note)
     {
-        //
+        return view('note.show', compact('note'));
     }
 
     /**
@@ -57,9 +85,9 @@ class NoteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Note $note)
     {
-        //
+        return view('note.edit', compact('note'));
     }
 
     /**
@@ -71,7 +99,18 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $note = Note::find($id);
+        $note->name = $request->input('name');
+        $note->subtitle = $request->input('subtitle');
+        $note->content = $request->input('content');
+        $note->color = $request->input('color');
+        $note->tag = $request->input('tag');
+
+        $note->save();
+
+        return redirect()->route('note')->with('success','Zaaktualizowano notatke');
+            
     }
 
     /**
@@ -82,6 +121,9 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::find($id);
+    $note->delete();
+
+    return redirect('/note')->with('success', 'Cel zniszczony');
     }
 }

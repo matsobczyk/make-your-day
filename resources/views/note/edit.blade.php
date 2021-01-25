@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Product</h2>
+                <h2>Edytuj notatke</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('projects.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            <a class="btn btn-primary" onclick="window.location='{{ url("note") }}'" title="Go back"> <i class="fas fa-backward ">back</i> </a>
             </div>
         </div>
     </div>
@@ -23,37 +23,50 @@
         </div>
     @endif
 
-    <form action="{{ route('projects.update', $project->id) }}" method="POST">
-        @csrf
-        @method('PUT')
+    <form
+      class="container"
+      action="{{ route('note.update', $note->id) }}"
+      method="POST">
+      <input type="hidden" name="_method" value="PUT">
+        {{csrf_field()}}
+        
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $project->name }}" class="form-control" placeholder="Name">
+                    <input type="text" name="name" value="{{ $note->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Introduction:</strong>
-                    <textarea class="form-control" style="height:50px" name="introduction"
-                        placeholder="Introduction">{{ $project->introduction }}</textarea>
+                    <strong>Subtitle:</strong>
+                    <input type="text" name="subtitle" value="{{ $note->subtitle }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Location:</strong>
-                    <input type="text" name="location" class="form-control" placeholder="{{ $project->location }}"
-                        value="{{ $project->location }}">
+                    <strong>Content:</strong>
+                    <input type="text" name="content" value="{{ $note->content }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Cost:</strong>
-                    <input type="number" name="cost" class="form-control" placeholder="{{ $project->cost }}"
-                        value="{{ $project->location }}">
+                    <strong>Color:</strong>
+                    <input type="text" name="color" value="{{ $note->color }}" class="form-control" placeholder="Name">
                 </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Tag:</strong>
+                    <input type="text" name="tag" value="{{ $note->tag }}" class="form-control" placeholder="Name">
+                </div>
+            </div>
+
+
+
+
+            
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
