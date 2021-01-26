@@ -30,4 +30,7 @@ Route::put('/note/{id}/edit', [NoteController::class, 'edit'])->name('edit');
 Auth::routes();
 
 Route::get('/weather', [App\Http\Controllers\WeatherApiController::class, 'index'])->name('weather');
-Route::get('/weather/current', ['as' => 'get.currentWeather', 'uses'=>'WeatherApiController@current']);
+// Route::get('/weather/current', ['as' => 'get.currentWeather', 'uses'=>'WeatherApiController@current']);
+Route::get('/quote', [App\Http\Controllers\QuoteController::class, 'index'])->name('quote');
+//
+Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
