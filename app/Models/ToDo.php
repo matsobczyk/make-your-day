@@ -9,17 +9,13 @@ class ToDo extends Model
 {
     use HasFactory;
 
-    public $table = "ToDo";
+    public $table = "to_dos";
     public $timestamps = true;
 
-    protected $casts = [
-        'is_done' => 'boolean',
-
-    ];
 
     protected $fillable = [
-        'user',
-        'is_done',
         'text',
+        'is_done',
+        'user',
     ];
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Note;
 use SebastianBergmann\Environment\Console;
+use Exception;
 
 class NoteController extends Controller
 {
@@ -51,9 +52,9 @@ class NoteController extends Controller
         error_log('TEST WEJSCIA do store.');
 
           $this->validate($request, [
-            'name' => 'required|unique:notes|max:60',
-            'subtitle' => 'required|max:60',
-            'content' => 'required|max:500',
+            'name' => 'required|unique:notes|max:60|apha_dash',
+            'subtitle' => 'required|max:60|apha_dash',
+            'content' => 'required|max:500|alpha_dash',
             'tag' => 'required|alpha'
           ]);
       
@@ -140,7 +141,4 @@ class NoteController extends Controller
 
     return redirect('/note')->with('success', 'Cel zniszczony');
     }
-
-
-
 }

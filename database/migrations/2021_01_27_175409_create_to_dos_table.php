@@ -17,7 +17,7 @@ class CreateToDosTable extends Migration
             $table->id();
             $table->string('user');
             $table->mediumText('text');
-            $table->boolean('is_done');
+            $table->string('is_done');
             $table->timestamps();
         });
     }
