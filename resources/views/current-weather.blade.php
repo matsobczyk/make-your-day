@@ -7,10 +7,19 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $json_response = curl_exec($ch);
 $json_response = json_decode($json_response);
 
-echo 'tęp ' . $json_response->main->temp ."<br>" ;
- 
-echo 'humidity '. $json_response->main->humidity . "<br>" ;
+//assigning variables from json
+$temperature = $json_response->main->temp;
+$humidity = $json_response->main->humidity;
+$weatherDescription = $json_response->weather->description;
+$wind_speed = $json_response->wind->speed;
 
-echo 'wind_speed ' . $json_response->wind->speed."<br>";
+//printing to check what we`re getting
+echo 'tęp ' . $temperature ."<br>" ;
+
+echo 'desc ' . $weatherDescription
+
+echo 'humidity '. $humidity . "<br>" ;
+
+echo 'wind_speed ' . $wind_speed."<br>";
 
 ?>

@@ -5,12 +5,20 @@ $response = file_get_contents($url);
 $NewsData = json_decode($response);
 
 foreach ($NewsData->articles as $News){
-    echo 'Title: ' . "<br>" .$News->title; 
-    echo "<br>" .'Description: ' . "<br>" . $News->description;
-    echo "<br>" . 'Content: ' . "<br>" . $News->content;
-    echo "<br>" . 'Link: ' . "<br>" . $News->url;
-    echo "<br>" . 'Author: ' . "<br>" . $News->author;
-    echo "<br>" . 'Published: ' . "<br>" . $News->publishedAt;
+    //assigning json to variables
+    $newsTitle =$News->title;
+    $newsDescription = $News->description;
+    $newsContent = $News->content;
+    $newsUrl = $News->url;
+    $newsAuthor = $News->author;
+    $newsDate =$News->publishedAt;
+    //printing one article
+    echo 'Title: ' . "<br>" .$newsTitle; 
+    echo "<br>" .'Description: ' . "<br>" . $newsDescription;
+    echo "<br>" . 'Content: ' . "<br>" . $newsContent;
+    echo "<br>" . 'Link: ' . "<br>" . $newsUrl;
+    echo "<br>" . 'Author: ' . "<br>" . $newsAuthor;
+    echo "<br>" . 'Published: ' . "<br>" . $newsDate;
     break;
 } 
 ?>
