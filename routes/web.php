@@ -31,3 +31,10 @@ Auth::routes();
 
 Route::get('/weather', [App\Http\Controllers\WeatherApiController::class, 'index'])->name('weather');
 Route::get('/weather/current', ['as' => 'get.currentWeather', 'uses'=>'WeatherApiController@current']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
