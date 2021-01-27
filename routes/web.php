@@ -5,9 +5,9 @@ use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ToDoController;
 
 use Illuminate\Support\Facades\Auth;
-//Route::get('/', function () {
-   // return view('welcome');
-//});
+Route::get('/', function () {
+   return redirect('/login');
+});
 
 Auth::routes();
 
