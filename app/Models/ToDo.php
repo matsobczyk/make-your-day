@@ -5,18 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Note extends Model
+class ToDo extends Model
 {
     use HasFactory;
 
-    public $table = "notes";
+    public $table = "ToDo";
     public $timestamps = true;
 
+    protected $casts = [
+        'is_done' => 'boolean',
+
+    ];
+
     protected $fillable = [
-        'name',
-        'subtitle',
-        'content',
-        'tag',
-        'user'
+        'user',
+        'is_done',
+        'text',
     ];
 }

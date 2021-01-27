@@ -52,12 +52,6 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Color:</strong>
-                    <input type="text" name="color" value="{{ $note->color }}" class="form-control" placeholder="Name">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
                     <strong>Tag:</strong>
                     <input type="text" name="tag" value="{{ $note->tag }}" class="form-control" placeholder="Name">
                 </div>

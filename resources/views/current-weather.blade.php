@@ -10,13 +10,13 @@ $json_response = json_decode($json_response);
 //assigning variables from json
 $temperature = $json_response->main->temp;
 $humidity = $json_response->main->humidity;
-$weatherDescription = $json_response->weather->description;
+$weatherDescription = $json_response->weather[2];
 $wind_speed = $json_response->wind->speed;
 
 //printing to check what we`re getting
 echo 'tęp ' . $temperature ."<br>" ;
 
-echo 'desc ' . $weatherDescription
+echo 'desc ' . $weatherDescription;
 
 echo 'humidity '. $humidity . "<br>" ;
 

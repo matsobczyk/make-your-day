@@ -34,3 +34,10 @@ Route::get('/weather', [App\Http\Controllers\WeatherApiController::class, 'index
 Route::get('/quote', [App\Http\Controllers\QuoteController::class, 'index'])->name('quote');
 //
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
