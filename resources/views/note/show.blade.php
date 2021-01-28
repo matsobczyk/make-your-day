@@ -2,18 +2,26 @@
 
 
 @section('content')
-    <div class="row" style="margin-left:15px;">
+<div style="background-color: lightblue; position:fixed;padding:0;margin:0; top:0;left:0;width: 
+100%;height: 100%;">
+    <div class="row" style="margin:20px">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h1> Dane notatki </h1>
+                <h2 style="font-size: 38px;">Note data</h2>
                 <h2>  {{ $note->name }}</h2>
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray;width:200px;position:fixed">
+                
+            
             </div>
+            </br>
+            </br>
             <div class="pull-right">
-            <a class="btn btn-primary" onclick="window.location='{{ url("note") }}'" title="Go back"> <i class="fas fa-backward ">back</i> </a>
+            <a class="btn btn-primary" onclick="window.location='{{ url("note") }}'" title="Go back"> <i class="fas fa-backward ">Back</i> </a>
             </div>
         </div>
     </div>
 
+    <div style="padding: 10px;background-color: rgba(255, 255, 255, 0.56) ;border-radius: 40px;border: 1px solid #ddd;margin: 30px;">
     <div class="row" style="margin-left:15px;">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -45,6 +53,12 @@
                 {{ $note->tag }}
             </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tag:</strong>
+                {{ $note->user }}
+            </div>
+            </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Date Created:</strong>
@@ -69,5 +83,6 @@
                 type="submit"
                 class="btn btn-danger">Delete</button>
             </form>
+    </div>
     </div>
 @endsection

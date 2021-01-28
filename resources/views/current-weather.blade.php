@@ -9,5 +9,5 @@ $json_response = curl_exec($ch);
 //assigning variables from json
 //printing to check what we`re getting
 echo $json_response;
-
+a
 ?>

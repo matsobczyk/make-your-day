@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Note;
+use SebastianBergmann\Environment\Console;
+use Exception;
 
 class NoteController extends Controller
 {
@@ -14,11 +16,20 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::all();
-    // var_dump($cele);
-    return view('note.index')->with('notes', $notes);
+        $notes = Note::get()->toJson(JSON_PRETTY_PRINT);
+     
+        return response($notes,200);
     }
-
+    
+    
+    
+    // public function getAllNotes(){
+        // $notes = Note::get()->toJson(JSON_PRETTY_PRINT);
+     
+        // return response($notes,200);
+    // }
+    
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -41,22 +52,22 @@ class NoteController extends Controller
         error_log('TEST WEJSCIA do store.');
 
           $this->validate($request, [
-            'name' => 'required|unique:notes|max:60',
-            'subtitle' => 'required|max:60',
-            'content' => 'required|max:500',
-            'color' => 'required',
+            'name' => 'required|unique:notes|max:60|apha_dash',
+            'subtitle' => 'required|max:60|apha_dash',
+            'content' => 'required|max:500|alpha_dash',
             'tag' => 'required|alpha'
           ]);
       
-          $current_date = date('Y-m-d H:i:s');
+          $user = auth()->user();
+          $id = ($user->id);
 
           // Stworzenie celu
           $note = new Note;
           $note->name = $request->input('name');
           $note->subtitle = $request->input('subtitle');
           $note->content = $request->input('content');
-          $note->color = $request->input('color');
           $note->tag = $request->input('tag');
+          $note->user = $id;
           //$note->created_at = $current_date;
           //$note->updated_at = $current_date;
 
@@ -65,7 +76,10 @@ class NoteController extends Controller
           }catch(Exception $e){
             echo 'Caught exception: ',  $e->getMessage(), "\n";
           }
-          return redirect()->route('note')->with('success','dodano notatke');
+         // return redirect()->route('note')->with('success','dodano notatke'); //commenting this out to add another return with json
+         return response()->json([
+             "message"=> "note created"
+         ], 201);
     }
 
     /**
@@ -99,17 +113,18 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $user = auth()->user();
+          $id = ($user->id);
         $note = Note::find($id);
         $note->name = $request->input('name');
         $note->subtitle = $request->input('subtitle');
         $note->content = $request->input('content');
-        $note->color = $request->input('color');
         $note->tag = $request->input('tag');
+        $note->user = $id;
 
         $note->save();
-
-        return redirect()->route('note')->with('success','Zaaktualizowano notatke');
+        
+        return redirect()->route('note')->with('success','dodano notatke');
             
     }
 
