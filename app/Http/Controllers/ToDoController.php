@@ -42,7 +42,7 @@ class ToDoController extends Controller
         error_log('TEST WEJSCIA do store.');
 
           $this->validate($request, [
-            'text' => 'required|unique:to_dos|max:60|apha_dash',
+            'text' => 'required|unique:to_dos|max:60',
             
           ]);
       

@@ -53,11 +53,6 @@
     </div>
 
     <div class="form-group">
-        <label>Color</label>
-        <input type="text" name="color" class="form-control">
-    </div>
-
-    <div class="form-group">
         <label>Tag</label>
         <input type="text" name="tag" class="form-control">
     </div>

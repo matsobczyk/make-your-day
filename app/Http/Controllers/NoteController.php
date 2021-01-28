@@ -52,8 +52,8 @@ class NoteController extends Controller
         error_log('TEST WEJSCIA do store.');
 
           $this->validate($request, [
-            'name' => 'required|unique:notes|max:60|apha_dash',
-            'subtitle' => 'required|max:60|apha_dash',
+            'name' => 'required|unique:notes|max:60|alpha_dash',
+            'subtitle' => 'required|max:60|alpha_dash',
             'content' => 'required|max:500|alpha_dash',
             'tag' => 'required|alpha'
           ]);
@@ -76,10 +76,8 @@ class NoteController extends Controller
           }catch(Exception $e){
             echo 'Caught exception: ',  $e->getMessage(), "\n";
           }
-         // return redirect()->route('note')->with('success','dodano notatke'); //commenting this out to add another return with json
-         return response()->json([
-             "message"=> "note created"
-         ], 201);
+         return redirect()->route('react')->with('success','dodano notatke'); //commenting this out to add another return with json
+
     }
 
     /**
@@ -124,7 +122,7 @@ class NoteController extends Controller
 
         $note->save();
         
-        return redirect()->route('note')->with('success','dodano notatke');
+        return redirect()->route('react')->with('success','dodano notatke');
             
     }
 
@@ -139,6 +137,6 @@ class NoteController extends Controller
         $note = Note::find($id);
     $note->delete();
 
-    return redirect('/note')->with('success', 'Cel zniszczony');
+    return redirect('/react')->with('success', 'Cel zniszczony');
     }
 }

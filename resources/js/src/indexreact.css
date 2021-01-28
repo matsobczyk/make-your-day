@@ -8,16 +8,16 @@ html {
 }
 body {
   font-family: 'Poppins', sans-serif;
-  color: white;
 
 }
-.row{
+.rowApp{
   display: flex;
 }
 .app {
+  color: white;
   margin: 100px;
 }
-.container{
+.containerApp{
   justify-content: space-between;
   display: flex;
   flex-direction: row;
