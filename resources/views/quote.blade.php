@@ -1,6 +1,5 @@
 <?php
-$apiKey= env("API_KEY_WEATHER");
-$url = 'api.openweathermap.org/data/2.5/weather?id=3099434&appid='.$apiKey;    
+$url = 'https://type.fit/api/quotes';
 $ch = curl_init($url);
 curl_setopt($ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

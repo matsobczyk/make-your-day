@@ -4,9 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 
 
-//Route::get('/', function () {
-   // return view('welcome');
-//});
+
 
 Auth::routes();
 
@@ -17,11 +15,11 @@ Route::resource('note', NoteController::class);
 Auth::routes();
 
 Route::get('/note', [App\Http\Controllers\NoteController::class, 'index'])->name('note');
-Route::get('/note/create', [App\Http\Controllers\NoteController::class, 'create'])->name('create');
-//Route::get('/note/create', [App\Http\Controllers\NoteController::class, 'store'])->name('create');
-Route::post('/note/store','NoteController@store');
+// Route::get('/note/create', [App\Http\Controllers\NoteController::class, 'create'])->name('create');
+// //Route::get('/note/create', [App\Http\Controllers\NoteController::class, 'store'])->name('create');
+// Route::post('/note/store','NoteController@store');
 
-Route::put('/note/{id}/edit', [NoteController::class, 'edit'])->name('edit');
+// Route::put('/note/{id}/edit', [NoteController::class, 'edit'])->name('edit');
 //Route::post('/note/store', [App\Http\Controllers\NoteController::class, 'store'])->name('store');
 //Route::put('/note/store', [App\Http\Controllers\NoteController::class, 'store'])->name('store');
 
@@ -30,11 +28,12 @@ Route::put('/note/{id}/edit', [NoteController::class, 'edit'])->name('edit');
 Auth::routes();
 
 Route::get('/weather', [App\Http\Controllers\WeatherApiController::class, 'index'])->name('weather');
-Route::get('/weather/current', ['as' => 'get.currentWeather', 'uses'=>'WeatherApiController@current']);
-Auth::routes();
+// Route::get('/weather/current', ['as' => 'get.currentWeather', 'uses'=>'WeatherApiController@current']);
+Route::get('/quote', [App\Http\Controllers\QuoteController::class, 'index'])->name('quote');
+//
+Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/react', function (){
+   return view('react');
+} )->name('news');

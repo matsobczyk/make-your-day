@@ -15,31 +15,13 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->string('Subtitle');
-            $table->mediumText('Content');
-            $table->string('Color');
-            $table->string('Tag');
+            $table->string('name');
+            $table->string('subtitle');
+            $table->mediumText('content');
+            $table->string('color');
+            $table->string('tag');
             $table->timestamps();
         });
-
-        // Uzupełnienie tabeli rekordami
-    DB::table('notes')->insert([
-        [
-            'Name' => 'Notatka1',
-            'Subtitle' => 'Podtytuł',
-            'Content' => 'hhhhhheehehheheh',
-            'Color' => 'black',
-            'Tag' => 'notatka',
-        ],
-        [
-            'Name' => 'Notatka2',
-            'Subtitle' => 'Podtytuł',
-            'Content' => 'asdassdsdsdsa',
-            'Color' => 'red',
-            'Tag' => 'notatka',
-        ]
-    ]);
     }
 
     /**
