@@ -16,10 +16,11 @@ class ToDoController extends Controller
      */
     public function index()
     {
-        $to_dos = ToDo::all();
-    // var_dump($cele);
-    return view('todo.index')->with('to_dos', $to_dos);
+    $to_dos = ToDo::get()->toJson(JSON_PRETTY_PRINT);
+     
+    return response($to_dos,200);
     }
+
 
     /**
      * Show the form for creating a new resource.
