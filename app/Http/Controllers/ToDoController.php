@@ -16,9 +16,9 @@ class ToDoController extends Controller
      */
     public function index()
     {
-        $to_dos = ToDo::all();
-    // var_dump($cele);
-    return view('todo.index')->with('to_dos', $to_dos);
+    $to_dos = ToDo::get()->toJson(JSON_PRETTY_PRINT);
+     
+    return response($to_dos,200);
     }
 
     /**
@@ -64,7 +64,7 @@ class ToDoController extends Controller
           }catch(Exception $e){
             echo 'Caught exception: ',  $e->getMessage(), "\n";
           }
-          return redirect()->route('todo')->with('success','dodano todo');
+          return redirect()->route('react')->with('success','dodano todo');
     }
 
     /**
@@ -106,13 +106,13 @@ class ToDoController extends Controller
           // edytowanie celu
           $todo = ToDo::find($id);
           $todo->text = $request->input('text');
-          $todo->is_done = "false";
+          $todo->is_done = $request->input('submit') ? "true" : "false";
           $todo->user = $id;
           //$note->created_at = $current_date;
           //$note->updated_at = $current_date;
           $todo->save();
         
-        return redirect()->route('todo')->with('success','dodano todo');
+        return redirect()->route('react')->with('success','dodano todo');
     }
 
     /**
@@ -128,6 +128,6 @@ class ToDoController extends Controller
     
     
 
-    return redirect('/todo')->with('success', "usunieto");
+    return redirect('/react')->with('success', "usunieto");
     }
 }

@@ -32,15 +32,15 @@ const WeatherBox = (params) => {
 
     return (
         <div className='box small shadow'>
-            <h1>{city}</h1>
-            <div className='row'>
+            <h3>{city}</h3>
+            <div className='rowApp'>
             <div className='column'>
               <div className='weatherIconBox shadow'>
-                  <h1>{temp + 'C'}</h1>
+                  <h1>{(temp-273.15).toFixed(1) + '°C'}</h1>
               </div>
               
             </div>
-            <div className='column'>
+            <div className='column weatherclass'>
                 <p>Clouds:{clouds}%</p>
                 <p>Humidity: {humidity} %</p>
                 <p>Wind: {wind} km/h</p>

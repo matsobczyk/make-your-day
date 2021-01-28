@@ -12,7 +12,7 @@
             <br/>
             <br/>
             <div class="pull-right">
-                <a class="btn btn-primary" onclick="window.location='{{ url("react") }}'" title="Go back"> <i class="fas fa-backward ">Back</i> </a>
+                <a class="btn btn-primary" onclick="window.location='{{ url("note") }}'" title="Go back"> <i class="fas fa-backward ">Back</i> </a>
             </div>
         </div>
     </div>

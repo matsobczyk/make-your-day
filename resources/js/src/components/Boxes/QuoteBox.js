@@ -26,8 +26,8 @@ const QuoteBox = () => {
 
 
     return (
-        <div className='box small shadow'>
-            <div className='quoteBox shadow'>
+        <div className='box small shadow center'>
+            <div className='quoteBox shadow '>
                 <p>{quote}</p>
                 <p>{author}</p>
             </div>

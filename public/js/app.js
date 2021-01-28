@@ -2034,38 +2034,49 @@ var NewsBox = function NewsBox(props) {
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "box big shadow",
+    className: "box big shadow ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
       children: "News"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-      style: myStyle,
-      href: news1link,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "newsBox shadow",
-        children: news1
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-      style: myStyle,
-      href: news2link,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "newsBox shadow",
-        children: news2
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-      style: myStyle,
-      href: news3link,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "newsBox shadow",
-        children: news3
-      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+        style: myStyle,
+        href: news1link,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "newsBox shadow margin3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "news",
+            children: news1
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+        style: myStyle,
+        href: news2link,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "newsBox shadow",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "news",
+            children: news2
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+        style: myStyle,
+        href: news3link,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "newsBox shadow",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "news",
+            children: news3
+          })
+        })
+      })]
     })]
   });
 };
 
 var myStyle = {
   color: 'white',
-  textDecoration: 'none',
-  pointerEvents: 'none'
+  textDecoration: 'none'
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NewsBox);
 
@@ -2087,20 +2098,118 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-var NoteBox = function NoteBox() {
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var TodoBox = function TodoBox() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      todo = _useState2[0],
+      setTodo = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState4 = _slicedToArray(_useState3, 2),
+      todo1 = _useState4[0],
+      setTodo1 = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState6 = _slicedToArray(_useState5, 2),
+      todo2 = _useState6[0],
+      setTodo2 = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState8 = _slicedToArray(_useState7, 2),
+      todo3 = _useState8[0],
+      setTodo3 = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState10 = _slicedToArray(_useState9, 2),
+      todoid = _useState10[0],
+      setTodoid = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState12 = _slicedToArray(_useState11, 2),
+      todo1id = _useState12[0],
+      setTodo1id = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState14 = _slicedToArray(_useState13, 2),
+      todo2id = _useState14[0],
+      setTodo2id = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState16 = _slicedToArray(_useState15, 2),
+      todo3id = _useState16[0],
+      setTodo3id = _useState16[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    fetch('http://127.0.0.1:8000/note').then(function (res) {
+      return res.json();
+    }).then(function (dane) {
+      setTodo(dane[0].content);
+      setTodo1(dane[1].content);
+      setTodo2(dane[2].content);
+      setTodoid(dane[0].id);
+      setTodo1id(dane[1].id);
+      setTodo2id(dane[2].id);
+      setTodo3(dane[3].conten);
+      setTodo3id(dane[3].id);
+      console.log(dane);
+    });
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "box medium big shadow",
+    className: "box big shadow center",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-      children: "Quick Note"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "noteBox shadow",
-      children: "aaa"
+      children: "Notes"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/note/' + todoid,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/note/' + todo1id,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo1
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/note/' + todo2id,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo2
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/note/' + todo3id,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo3
+      })
     })]
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NoteBox);
+var myStyle = {
+  color: 'white',
+  textDecoration: 'none'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoBox);
 
 /***/ }),
 
@@ -2156,9 +2265,9 @@ var QuoteBox = function QuoteBox() {
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "box small shadow",
+    className: "box small shadow center",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "quoteBox shadow",
+      className: "quoteBox shadow ",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
         children: quote
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
@@ -2198,37 +2307,45 @@ var min = new Date().getMinutes();
 var TimeBox = function TimeBox() {
   var hours = new Date().getHours();
   var min = new Date().getMinutes();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
     className: "box medium small shadow",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "timeContainer row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "timeBox shadow",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-          children: hours.toString()[0]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "timeBox shadow",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-          children: hours.toString()[1]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "timeBox shadow",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-          children: min.toString()[0]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "timeBox shadow",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-          children: min.toString()[1]
-        })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "dateBox shadow",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-        children: (0,_utils_getdate__WEBPACK_IMPORTED_MODULE_2__.getCurrentDate)().slice(0, 4) + ' ' + (0,_utils_getdate__WEBPACK_IMPORTED_MODULE_2__.getCurrentDate)().slice(4, 6) + ' ' + (0,_utils_getdate__WEBPACK_IMPORTED_MODULE_2__.getCurrentDate)().slice(6, 8)
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          className: "timeContainer rowApp",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "timeBox shadow margin5",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+              children: hours.toString()[0]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "timeBox shadow margin5",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+              children: hours.toString()[1]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "timeBox shadow margin5",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+              children: min.toString()[0]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "timeBox shadow margin5",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+              children: min.toString()[1]
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+          className: "customCenter",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+            className: "dateBox shadow",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+              children: (0,_utils_getdate__WEBPACK_IMPORTED_MODULE_2__.getCurrentDate)().slice(0, 4) + ' ' + (0,_utils_getdate__WEBPACK_IMPORTED_MODULE_2__.getCurrentDate)().slice(4, 6) + ' ' + (0,_utils_getdate__WEBPACK_IMPORTED_MODULE_2__.getCurrentDate)().slice(6, 8)
+            })
+          })
+        })]
       })
-    })]
+    })
   });
 };
 
@@ -2252,24 +2369,117 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 var TodoBox = function TodoBox() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      todo = _useState2[0],
+      setTodo = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState4 = _slicedToArray(_useState3, 2),
+      todo1 = _useState4[0],
+      setTodo1 = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState6 = _slicedToArray(_useState5, 2),
+      todo2 = _useState6[0],
+      setTodo2 = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState8 = _slicedToArray(_useState7, 2),
+      todo3 = _useState8[0],
+      setTodo3 = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState10 = _slicedToArray(_useState9, 2),
+      todoid = _useState10[0],
+      setTodoid = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState12 = _slicedToArray(_useState11, 2),
+      todo1id = _useState12[0],
+      setTodo1id = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState14 = _slicedToArray(_useState13, 2),
+      todo2id = _useState14[0],
+      setTodo2id = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState16 = _slicedToArray(_useState15, 2),
+      todo3id = _useState16[0],
+      setTodo3id = _useState16[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    fetch('http://127.0.0.1:8000/todo').then(function (res) {
+      return res.json();
+    }).then(function (dane) {
+      setTodo(dane[0].text);
+      setTodo1(dane[1].text);
+      setTodo2(dane[2].text);
+      setTodoid(dane[0].id);
+      setTodo1id(dane[1].id);
+      setTodo2id(dane[2].id);
+      setTodo3(dane[3].text);
+      setTodo3id(dane[3].id);
+      console.log(dane);
+    });
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "box big shadow",
+    className: "box big shadow center",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
       children: "TODO"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "todoBox shadow"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "todoBox shadow"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "todoBox shadow"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: "todoBox shadow"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/todo/' + todoid,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/todo/' + todo1id,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo1
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/todo/' + todo2id,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo2
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+      style: myStyle,
+      href: 'http://127.0.0.1:8000/todo/' + todo3id,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "todoBox shadow",
+        children: todo3
+      })
     })]
   });
 };
 
+var myStyle = {
+  color: 'white',
+  textDecoration: 'none'
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoBox);
 
 /***/ }),
@@ -2357,20 +2567,20 @@ var WeatherBox = function WeatherBox(params) {
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "box small shadow",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
       children: city
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "row",
+      className: "rowApp",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "column",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
           className: "weatherIconBox shadow",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-            children: temp + 'C'
+            children: (temp - 273.15).toFixed(1) + '°C'
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "column",
+        className: "column weatherclass",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
           children: ["Clouds:", clouds, "%"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
@@ -7002,7 +7212,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_background_png__WEBPACK_IMPORTED_MODULE_2__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  /* background-image: linear-gradient(to bottom right, red, yellow); */\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: cover; /* Center the image */\n  background-repeat: no-repeat; /* Do not repeat the image */\n}\nbody {\n  font-family: 'Poppins', sans-serif;\n\n}\n.rowApp{\n  display: flex;\n}\n.app {\n  color: white;\n  margin: 100px;\n}\n.containerApp{\n  justify-content: space-between;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.shadow {\n  box-shadow: 0 1px 2px rgba(0,0,0,0.15);\n  transition: box-shadow 0.3s ease-in-out;\n}\n.shadow:hover{\n  box-shadow: 0 5px 15px rgba(0,0,0,0.3);\n\n}\n.box{\n  text-align: center;\n  background-color: rgba(255, 255, 255, 0.31) ;\n  margin-top: 30px;\n  border-radius: 40px;\n  min-width: 470px;  \n  overflow: hidden;\n}\n\n.box.small{\n  height: 200px;\n}\n\n.box.big{\n  min-height: 400px;\n}\n\n.header {\n  font-size: xx-large;\n  margin-bottom: 30px;\n}\n\n.weatherIconBox {\n  background-color: rgba(255, 255, 255, 0.31) ;\n  width: 120px;\n  height: 120px;\n  border-radius: 40px;\n}\n\n.newsBox{\n  margin: 0px;\n  width: 400px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n  height: 80px;\n  border-radius: 40px;\n}\n\n.todoBox{\n  width: 400px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n  height: 50px;\n  border-radius: 40px;\n}\n.quoteBox{\n  height: 80%;\n  width: 80%;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}\n.timeBox{\n  width: 90px;\n  height: 100px;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}\n.dateBox{\n  font-size:large ;\n  height: 50px;\n  width: 80%;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}\n.noteBox{\n  height: 300px;\n  width: 80%;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  /* background-image: linear-gradient(to bottom right, red, yellow); */\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: cover; /* Center the image */\n  background-repeat: no-repeat; /* Do not repeat the image */\n}\nbody {\n  font-family: 'Poppins', sans-serif;\n\n}\n.rowApp{\n  display: flex;\n  flex-direction: row;\n}\n.app {\n  color: white;\n  margin: 100px;\n}\n.containerApp{\n  justify-content: space-between;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.shadow {\n  box-shadow: 0 1px 2px rgba(0,0,0,0.15);\n  transition: box-shadow 0.3s ease-in-out;\n}\n.shadow:hover{\n  box-shadow: 0 5px 15px rgba(0,0,0,0.3);\n\n}\n.box{\n  text-align: center;\n  background-color: rgba(255, 255, 255, 0.31) ;\n  margin-top: 30px;\n  border-radius: 40px;\n  min-width: 470px;  \n  overflow: hidden;\n}\n\n.box.small{\n  height: 200px;\n}\n\n.box.big{\n  min-height: 400px;\n}\n\n.header {\n  font-size: xx-large;\n  margin-bottom: 30px;\n}\n\n.weatherIconBox {\n  margin-left: 40px;\n  margin-bottom: 20px;\n  padding-bottom: 20px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n  width: 120px;\n  height: 120px;\n  border-radius: 40px;\n}\n\n.newsBox{\n  text-align: center;\n  margin: 0px;\n  margin-bottom: 15px ;\n  width: 400px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n  height: 80px;\n  border-radius: 40px;\n}\n\n.todoBox{\n  margin: 0px;\n  margin-bottom: 15px ;\n  width: 400px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n  height: 50px;\n  border-radius: 40px;\n}\n.quoteBox{\n  height: 80%;\n  width: 80%;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}\n.timeBox{\n  width: 90px;\n  height: 100px;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}\n.dateBox{\n  font-size:large ;\n  height: 50px;\n  width: 80%;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}\n.noteBox{\n  height: 300px;\n  width: 80%;\n  border-radius: 40px;\n  background-color: rgba(255, 255, 255, 0.31) ;\n}\n.center{\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n}\n.centerHor{\n  display: flex;\n\n}\n\n.weatherclass {\n  margin: 60px;\n  margin-top: 0px;\n\n}\n.margin5{\n  margin-top: 15px;\n  margin-left: 5px;\n  margin-right: 5px;\n}\n.news{\n  padding-top: 10px;\n  padding-left: 2px;\n  padding-right: 2px;\n}\n.customCenter{\n  margin-left:55px;\n  align-items: center;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

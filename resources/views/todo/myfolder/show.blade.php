@@ -14,7 +14,7 @@
             <br/>
             <br/>
             <div class="pull-right">
-            <a class="btn btn-primary" onclick="window.location='{{ url("react") }}'" title="Go back"> <i class="fas fa-backward ">Back</i> </a>
+            <a class="btn btn-primary" onclick="window.location='{{ url("todo") }}'" title="Go back"> <i class="fas fa-backward ">back</i> </a>
             </div>
         </div>
     </div>
@@ -35,11 +35,11 @@
                 <strong>Done?:</strong>
                 {{ $todo->is_done }}
                 </br>
-            
             </div>
             </div>
+           
             
-            <div style="margin-left: 20px;" class="form-group">
+        
             <form
                  method="POST"
                  action="{{ route('todo.destroy', $todo->id) }}"
@@ -57,12 +57,7 @@
                 type="submit"
                 class="btn btn-danger">Delete</button>
             </form>
-            </div>
-            
-            <div style="margin-left: 10px;" class="form-group">
-                 <a class="btn btn-small btn-info" href="{{ URL::to('todo/' . $todo->id . '/edit') }}">Edit</a>
-             </div>
-             
+    </div>
     </div>
     </div>
 @endsection

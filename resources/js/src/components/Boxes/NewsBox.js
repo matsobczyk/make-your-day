@@ -34,23 +34,25 @@ const NewsBox = (props) => {
 
 
     return (
-        <div className='box big shadow'>
+        <div className='box big shadow '>
             <h1>News</h1>
-            <a style={myStyle} href={news1link}>
-                <div className='newsBox shadow'>
-                    {news1}
-                </div>
-            </a>
-            <a style={myStyle} href={news2link}>
-                <div className='newsBox shadow'>
-                    {news2}
-                </div>
-            </a>
-            <a style={myStyle} href={news3link}>
-                <div className='newsBox shadow'>
-                    {news3}
-                </div>
-            </a>
+            <div className='center'>
+                <a style={myStyle} href={news1link}>
+                    <div className='newsBox shadow margin3'>
+                    <div className='news'>{news1}</div>
+                    </div>
+                </a>
+                <a style={myStyle} href={news2link}>
+                    <div className='newsBox shadow'>
+                    <div className='news'>{news2}</div>
+                    </div>
+                </a>
+                <a style={myStyle} href={news3link}>
+                    <div className='newsBox shadow'>
+                        <div className='news'>{news3}</div>
+                    </div>
+                </a>
+            </div>
             
         </div>
     )
@@ -59,7 +61,6 @@ const NewsBox = (props) => {
 const myStyle = {
     color: 'white',
     textDecoration: 'none',
-    pointerEvents: 'none',
 }
 
 export default NewsBox

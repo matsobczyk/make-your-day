@@ -19,6 +19,10 @@ Route::get('notes', 'NoteController@getAllNotes');
 
 Route::post('notes', 'NoteController@store');
 
+Route::get('to_dos', 'ToDoController@getAllTodos');
+
+Route::post('to_dos', 'ToDoController@store');
+
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
